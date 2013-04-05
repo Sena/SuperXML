@@ -2,17 +2,8 @@
 /**
  * 
  * @author flavio.sena
- * @version 0.3
+ * @version 0.4
  * 
- * date: 2012-09-28 0.1
- *      Started Project
- * update: 2012-12-12 0.2
- *      Bug fix: XML sub tag
- * update: 2012-12-13 0.3
- *      Add attribute support
- * update: 2012-12-18 0.4
- *      Let create xml not valid
- *
  */
 class SuperXML {
     
@@ -49,7 +40,7 @@ class SuperXML {
      */
     public function object2Xml($data, $initKey = NULL, $header = TRUE, $validate = TRUE) {
         $return = FALSE;
-        if (function_exists ( 'json_encode' ) === TRUE && function_exists ( 'json_decode' ) === TRUE && is_object ( $data ) === TRUE) {
+        if (function_exists ( 'json_encode' ) === TRUE && function_exists ( 'json_decode' ) === TRUE) {
             $data = json_encode ( $data );
             $data = json_decode ( $data, TRUE );
             $return = $this->array2Xml ( $data, $initKey, $header );

@@ -2,7 +2,7 @@
 /**
  * 
  * @author flavio.sena
- * @version 0.4
+ * @version 0.5
  * 
  */
 class SuperXML {
@@ -67,7 +67,7 @@ class SuperXML {
                 if (is_array ( $row ) === TRUE) {
                     $return .= $this->array2XmlLoop ( $row, (is_numeric ( $key ) === FALSE ? $key : $initKey), FALSE );
                 } else {
-                    $return .= '<' . $key . '>' . $row . '</' . $key . '>' . PHP_EOL;
+                    $return .= '<' . $key . '>' . htmlspecialchars ($row) . '</' . $key . '>' . PHP_EOL;
                 }
             }
             if ($initKey !== NULL && is_numeric ( $keyArray ) === FALSE) {

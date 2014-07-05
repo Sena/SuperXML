@@ -43,7 +43,7 @@ class SuperXML {
         if (function_exists ( 'json_encode' ) === TRUE && function_exists ( 'json_decode' ) === TRUE) {
             $data = json_encode ( $data );
             $data = json_decode ( $data, TRUE );
-            $return = $this->array2Xml ( $data, $initKey, $header );
+            $return = $this->array2Xml ( $data, $initKey, $header, $validate );
         }
         return $return;
     }
